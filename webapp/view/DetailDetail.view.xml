@@ -1,0 +1,42 @@
+<mvc:View displayBlock="true" controllerName="flexapp.projectflex.controller.DetailDetail" height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:f="sap.f"
+        xmlns:l="sap.ui.layout"
+		xmlns:m="sap.m">
+
+        	
+	
+	
+	<f:DynamicPage toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+                <f:heading>
+                    <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+                    <m:Title text="{​​​​products>text}​​​​" wrapping="true" class="sapUiTinyMarginEnd"/>
+                    </m:FlexBox>
+                </f:heading>
+
+
+				<f:navigationActions>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/fullScreen} !== null }"/>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/exitFullScreen} !== null }"/>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+
+				</f:navigationActions>
+
+			</f:DynamicPageTitle>
+		</f:title>
+        
+              <f:content>     
+                <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Start">
+                	<m:Link text="Navigate to next page…" press="handleAboutPress" />
+                  <m:Title text="This is slider with text" wrapping="true" class="sapUiTinyMarginEnd"/>
+                <m:Slider value="50" width="100%"
+				min="0" max="100"
+				showAdvancedTooltip="true"
+				showHandleTooltip="false"
+				class="sapUiMediumMarginBottom" />
+                    </m:FlexBox>   					
+        </f:content>
+    	</f:DynamicPage>
+</mvc:View>
